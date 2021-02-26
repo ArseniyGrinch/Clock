@@ -1,0 +1,210 @@
+/** color **/
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    outline: none;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+ul {
+    padding-left: 0;
+    margin: 0;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input[type="number"]:hover,
+input[type="number"]:focus {
+    -moz-appearance: number-input;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input {
+    margin: 0;
+    padding: 0;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+button {
+    background: none;
+    border: none;
+}
+
+textarea {
+    resize: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+/** main-clock **/
+.main {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.clock {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    max-width: 507px;
+    background: url(/assets/images/clock-background-2.png), url(/assets/images/clock-background.png);
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
+    position: relative;
+    border-radius: 50%;
+    padding-top: 32px;
+    padding-bottom: 19px;
+}
+
+.clock::after {
+    content: '';
+    position: absolute;
+    background: linear-gradient(134.67deg, #F04F80 14.83%, rgba(255, 255, 255, 0) 83.93%), #8563BC;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -2;
+    border-radius: 50%;
+    margin: -30px;
+}
+
+.clock__wrap {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.clock__wrap:nth-child(1) {
+    max-width: 257px;
+}
+
+.clock__wrap:nth-child(1) .clock__numeral:nth-child(1), .clock__wrap:nth-child(1) .clock__numeral:nth-child(3) {
+    margin-top: calc( 62px - 32px);
+    margin-bottom: 31px;
+}
+
+.clock__wrap:nth-child(2) {
+    max-width: 391px;
+    margin-bottom: 80px;
+}
+
+.clock__wrap:nth-child(3) {
+    max-width: 458px;
+    margin-bottom: 81px;
+}
+
+.clock__wrap:nth-child(4) {
+    max-width: 378px;
+    margin-bottom: 36px;
+}
+
+.clock__wrap:nth-child(5) {
+    max-width: 244px;
+}
+
+.clock__wrap:nth-child(5) .clock__numeral:nth-child(2) {
+    margin-top: calc( 62px - 19px);
+}
+
+.clock__numeral {
+    font-family: "Press Start 2P", cursive;
+    font-size: 2.4rem;
+    line-height: 2.4rem;
+    color: #69008D;
+    width: 49px;
+    height: 31px;
+    text-align: center;
+}
+
+.clock__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.clock__arrows {
+    position: relative;
+}
+
+.clock__second {
+    --rotation: 0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    z-index: -1;
+    border: 1px solid white;
+    border-radius: 24px;
+    -webkit-transform-origin: bottom;
+    transform-origin: bottom;
+    -webkit-transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+    width: 3px;
+    height: 138px;
+    background-color: white;
+}
